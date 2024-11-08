@@ -1,10 +1,10 @@
-import Store from 'electron-store';
+import { ElectronStore } from './electron-store';
 import type { StorageEngine } from 'foca';
 
 const createElectronStorage = (
-  opts: Store.Options<Record<string, string | undefined>>,
+  opts: ElectronStore.Options<Record<string, string | undefined>>,
 ) => {
-  const store = new Store(opts);
+  const store = new ElectronStore(opts);
 
   return <StorageEngine>{
     getItem: (key) => {
